@@ -1,4 +1,4 @@
-# Nothing Burger
+# Vege Burger
 
 This is a template Node.js Web application which has the following things configured and working
 out of the box:
