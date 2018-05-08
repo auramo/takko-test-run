@@ -1,16 +1,16 @@
-import React from 'react'
-import * as R from 'ramda'
-import { Link } from './router'
+import React from "react";
+import * as R from "ramda";
+import { Link } from "./router";
 
 const tabs = {
-  tab1: { label: 'View 1', location: '/view1' },
-  tab2: { label: 'View 2', location: '/view2' }
-}
+  tab1: { label: "Test Runner", location: "/testRunner" },
+  tab2: { label: "View 2", location: "/view2" }
+};
 
 export default class Header extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {}
+    super(props);
+    this.state = {};
   }
   render() {
     return (
@@ -19,13 +19,17 @@ export default class Header extends React.Component {
           {R.map(
             ([tab, { label, location }]) => (
               <Link key={tab} className="btn btn-link" href={location}>
-                {tab === this.props.selectedTab ? <strong>{label}</strong> : label}
+                {tab === this.props.selectedTab ? (
+                  <strong>{label}</strong>
+                ) : (
+                  label
+                )}
               </Link>
             ),
             R.toPairs(tabs)
           )}
         </section>
       </header>
-    )
+    );
   }
 }
