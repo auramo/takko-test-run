@@ -8,8 +8,8 @@ class TestView1 extends React.Component {
   }
   componentDidMount() {
     setTimeout(() => {
-      this.props.ready("test1")
       this.setState({ running: false })
+      this.props.ready("test1")
     }, 1000)
   }
   render() {
